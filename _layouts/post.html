@@ -29,9 +29,8 @@ layout: default
         {% if page.share %}
           {% include social-share.html %}
         {% endif %}
-
-        {% if site.disqus.shortname %}
-          {% include disqus-comments.html %}
+        {% if site.disqus.shortname or site.gitalk.secret and site.gitalk.id and site.gitalk.name and site.gitalk.owner %}
+          {% include comments.html %}
         {% endif %}
 
         {% include page-pagination.html %}
