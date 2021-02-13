@@ -90,8 +90,9 @@ Additional [sample posts](https://mmistakes.github.io/so-simple-theme/posts/) ca
     10. [Search](#search)
     11. [Taxonomy Pages](#taxonomy-pages)
     12. [Comments (via Disqus)](#comments-via-disqus)
-    13. [Google Analytics](#google-analytics)
-    14. [Other](#other)
+    13. [Comments (via Gitalk)](#comments-via-gitalk)
+    14. [Google Analytics](#google-analytics)
+    15. [Other](#other)
 5. [Layouts](#layouts)
     1. [`layout: default`](#layout-default)
     2. [`layout: post`](#layout-post)
@@ -525,6 +526,24 @@ To enable Disqus comments, add your [Disqus shortname](https://help.disqus.com/c
 ```yaml
 disqus:
   shortname: my_disqus_shortname
+```
+
+### Comments (via Gitalk)
+If you have a [**GitHub Application**](https://github.com/settings/applications), you can show a comments section below each post.  
+**Note:** You must specify the website domain url in the Authorization callback URL field.
+To enable Gitalk comments, add your clientID, clientSecret and owner (and admins if applicable) to your project's `_config.yml` file:
+```yaml
+gitalk:
+  id: github_application_client_id
+  secret: github_application_client_secret
+  name: repo_name
+  owner: github_username
+  admins:
+  - github_username_of_first_admin
+  - github_username_of_second_admin
+  - ...
+  - github_username_of_nth_admin
+  distractionFree: true
 ```
 
 Comments only appear in production when built with the following [environment value](http://jekyllrb.com/docs/configuration/#specifying-a-jekyll-environment-at-build-time): `JEKYLL_ENV=production` to avoid polluting your Disqus account with `localhost` content.
